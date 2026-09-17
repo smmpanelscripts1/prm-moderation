@@ -1,0 +1,26 @@
+{
+    "name": "prm/moderation",
+    "description": "Staff moderator panel with reports, warnings, content removal, and bans.",
+    "type": "flarum-extension",
+    "version": "0.1.0",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prm\\Moderation\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Moderator Panel",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-shield-alt",
+                "backgroundColor": "#8e2a2a",
+                "color": "#fff"
+            }
+        }
+    }
+}
