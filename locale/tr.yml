@@ -1,0 +1,128 @@
+prm-moderation:
+  admin:
+    permissions:
+      access_label: Moderasyon paneline eriş
+      report_label: Kullanıcı / konu / mesaj raporla
+      ticket_label: Destek talebi aç
+  forum:
+    header: Moderasyon
+    header_tickets: Destek
+    nav_warnings: Uyarılar
+    user_controls:
+      warn: Uyarı gönder
+      report: Raporla
+    post_controls:
+      warn: Uyarı gönder
+      report: Mesajı raporla
+    discussion_controls:
+      warn: Uyarı gönder
+      report: Konuyu raporla
+    report:
+      title_user: "{username} kullanıcısını raporla"
+      title_post: Mesajı raporla
+      title_discussion: Konuyu raporla
+      reason: Sebep
+      reason_placeholder: (Seçin)
+      reason_spam: Spam
+      reason_abuse: Hakaret / taciz
+      reason_illegal: Kural dışı içerik
+      reason_other: Diğer
+      details: Açıklama
+      submit: Raporu gönder
+      success: Rapor moderasyon paneline iletildi.
+    warn:
+      title: "{username} kullanıcısına uyarı gönder"
+      points: Uyarı puanı
+      reason: Sebep
+      comment: Açıklama (isteğe bağlı)
+      submit: Uyarı gönder
+      success: Uyarı kaydedildi.
+    warnings:
+      empty: Henüz uyarı yok.
+      points: "{points} puan"
+      by: "{username} tarafından"
+    panel:
+      title: Moderasyon Paneli
+      pending: Bekleyen raporlar
+      resolved: Çözülenler
+      rejected: Reddedilenler
+      empty: Bu listede rapor yok.
+      reporter: Raporlayan
+      target: Kullanıcı
+      type: Tür
+      type_user: Kullanıcı
+      type_post: Mesaj
+      type_discussion: Konu
+      reason: Sebep
+      date: Tarih
+      actions: İşlem
+      open: İncele
+      view_content: İçeriğe git
+      chart_activity: Konu / cevap (30 gün)
+      chart_moderation: Rapor / uyarı (30 gün)
+      chart_discussions: Konu
+      chart_replies: Cevap
+      chart_reports: Rapor
+      chart_warnings: Uyarı
+    tickets:
+      title: Destek taleplerim
+      panel_title: Destek talepleri
+      section_reports: Raporlar
+      section_tickets: Destek
+      create: Yeni talep
+      empty: Henüz destek talebi yok.
+      empty_inbox: Bekleyen talep yok.
+      subject: Konu
+      category: Kategori
+      category_placeholder: (Seçin)
+      category_account: Hesap
+      category_payment: Ödeme / ticaret
+      category_technical: Teknik sorun
+      category_appeal: Uyarı / ban itirazı
+      category_other: Diğer
+      priority: Öncelik
+      priority_normal: Normal
+      priority_high: Yüksek
+      message: Mesaj
+      submit: Talebi gönder
+      success: Destek talebiniz oluşturuldu.
+      reply: Yanıt yaz
+      send_reply: Gönder
+      close: Talebi kapat
+      reopen: Yeniden aç
+      closed: Bu talep kapatıldı.
+      status: Durum
+      status_open: Yeni
+      status_waiting: Yanıt bekliyor
+      status_answered: Yanıtlandı
+      status_closed: Kapalı
+      inbox: Bekleyenler
+      user: Kullanıcı
+      last_update: Son güncelleme
+      open: Aç
+      assigned: "{username} ilgilendi"
+      mine_open: Açık talepler
+      mine_closed: Kapalı talepler
+      staff_badge: Yetkili
+    handle:
+      title: Raporu incele
+      delete_content: İçeriği sil (gizle)
+      warn: Uyarı gönder
+      ban: Kullanıcıyı banla
+      ban_days: Ban süresi
+      ban_1: 1 gün
+      ban_7: 7 gün
+      ban_30: 30 gün
+      ban_0: Kalıcı
+      warning_reason: Uyarı sebebi
+      warning_points: Uyarı puanı
+      ban_reason: Ban sebebi
+      resolve: Çöz ve uygula
+      reject: Reddet
+      close: Kapat
+    notifications:
+      warning_received: "{username} size uyarı gönderdi ({points} puan)"
+      notify_warning_label: Biri bana uyarı gönderdiğinde
+      ticket_replied: "{username} destek talebinize yanıt verdi"
+      ticket_replied_staff: "{username} destek talebine yanıt verdi"
+      notify_ticket_label: Destek talebime yanıt geldiğinde

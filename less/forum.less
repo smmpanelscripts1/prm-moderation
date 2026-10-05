@@ -1,0 +1,355 @@
+.ModerationPage {
+  padding: 20px 0 40px;
+}
+
+.ModerationPage-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ModerationPage-charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.ModerationPage-chart {
+  flex: 1 1 340px;
+  min-width: 0;
+  background: var(--control-bg);
+  border-radius: var(--border-radius);
+  padding: 14px 16px 8px;
+}
+
+.ModerationPage-chartHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 14px;
+  margin-bottom: 8px;
+}
+
+.ModerationPage-chartHead h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ModerationPage-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted-color);
+}
+
+.ModerationPage-legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ModerationPage-legendSwatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.ModerationLineChart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ModerationLineChart-grid {
+  stroke: var(--muted-color);
+  stroke-opacity: 0.22;
+  stroke-width: 1;
+}
+
+.ModerationLineChart-ylabel,
+.ModerationLineChart-xlabel {
+  fill: var(--muted-color);
+  font-size: 10px;
+}
+
+.ModerationLineChart-line {
+  fill: none;
+}
+
+.ModerationLineChart-dot {
+  stroke: var(--control-bg);
+  stroke-width: 1.5;
+}
+
+.ModerationPage-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.ModerationPage-panel {
+  background: var(--control-bg);
+  border-radius: var(--border-radius);
+  padding: 16px 18px;
+}
+
+.ModerationPage-tableWrap {
+  overflow-x: auto;
+}
+
+.ModerationPage-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.ModerationPage-table th,
+.ModerationPage-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--body-bg);
+  text-align: left;
+  vertical-align: top;
+}
+
+.ModerationPage-excerpt {
+  color: var(--muted-color);
+  font-size: 12px;
+  margin-top: 4px;
+  max-width: 360px;
+}
+
+.ModerationPage-pager {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 14px;
+}
+
+.ModerationBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.UserCard-warningPoints,
+.PostUser-warningPoints {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  font-size: 12px;
+  color: #e67e22;
+  font-weight: 700;
+}
+
+.WarningsPage-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--control-bg);
+}
+
+.WarningsPage-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.HandleReportModal .Form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.HandleReportModal textarea,
+.ReportModal textarea,
+.WarnModal textarea {
+  width: 100%;
+  min-height: 90px;
+}
+
+.HandleReportModal-summary {
+  background: var(--control-bg);
+  border-radius: var(--border-radius);
+  padding: 10px 12px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.ModerationPage-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.TicketsPage {
+  padding: 20px 0 40px;
+}
+
+.TicketsPage-back {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--muted-color);
+}
+
+.TicketsPage-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.TicketsPage-list {
+  background: var(--control-bg);
+  border-radius: var(--border-radius);
+  padding: 8px 0;
+}
+
+.TicketsPage-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--body-bg);
+  color: inherit;
+}
+
+.TicketsPage-item:hover {
+  background: var(--body-bg);
+}
+
+.TicketsPage-itemTitle {
+  font-weight: 700;
+}
+
+.TicketsPage-itemMeta {
+  color: var(--muted-color);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.TicketStatus {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--control-bg);
+}
+
+.TicketStatus--open {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.TicketStatus--waiting {
+  background: #e67e22;
+  color: #fff;
+}
+
+.TicketStatus--answered {
+  background: #2980b9;
+  color: #fff;
+}
+
+.TicketStatus--closed {
+  background: var(--muted-color);
+  color: #fff;
+}
+
+.TicketStatus--high {
+  margin-left: 6px;
+  background: #8e2a2a;
+  color: #fff;
+}
+
+.TicketPage-head {
+  margin-bottom: 16px;
+}
+
+.TicketPage-head h2 {
+  margin: 0 0 8px;
+}
+
+.TicketPage-meta {
+  color: var(--muted-color);
+  font-size: 13px;
+}
+
+.TicketPage-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.TicketReply {
+  background: var(--control-bg);
+  border-radius: var(--border-radius);
+  padding: 12px 14px;
+}
+
+.TicketReply--staff {
+  border-left: 3px solid var(--primary-color);
+}
+
+.TicketReply-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.TicketReply-meta .Avatar {
+  width: 28px;
+  height: 28px;
+  font-size: 14px;
+}
+
+.TicketReply-staffBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.TicketReply-body {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+.TicketPage-composer textarea {
+  width: 100%;
+  min-height: 110px;
+}
+
+.TicketPage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.CreateTicketModal textarea {
+  width: 100%;
+  min-height: 120px;
+}
