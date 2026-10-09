@@ -85,6 +85,31 @@ app.initializers.add('prm-moderation', () => {
         90
       );
     }
+    if (user && user.canMarkSpammer && user.canMarkSpammer()) {
+      items.add(
+        'moderation-mark-spammer',
+        <Button
+          icon="fas fa-bomb"
+          onclick={() => {
+            if (!confirm(t('user_controls.mark_spammer_confirm'))) {
+              return;
+            }
+            app
+              .request({
+                method: 'POST',
+                url: app.forum.attribute('apiUrl') + '/users/' + user.id() + '/mark-spammer',
+              })
+              .then(() => {
+                user.pushAttributes({ canMarkSpammer: false });
+                m.redraw();
+              });
+          }}
+        >
+          {t('user_controls.mark_spammer')}
+        </Button>,
+        85
+      );
+    }
   });
 
   extend(PostControls, 'userControls', function (items, post) {

@@ -11,14 +11,15 @@ use Flarum\Post\Post;
 use Flarum\User\Exception\PermissionDeniedException;
 use Flarum\User\User;
 use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\Facades\Schema;
 use Prm\Moderation\Notification\WarningReceivedBlueprint;
+use Prm\Moderation\Spam\SpamConfig;
 
 class ModerationActions
 {
     public function __construct(
         protected NotificationSyncer $notifications,
-        protected Dispatcher $events
+        protected Dispatcher $events,
+        protected SpamConfig $spamConfig
     ) {
     }
 
@@ -125,7 +126,9 @@ class ModerationActions
 
         $target->suspended_until = $until;
 
-        if (Schema::hasColumn('users', 'suspend_reason')) {
+        $schema = $target->getConnection()->getSchemaBuilder();
+
+        if ($schema->hasColumn('users', 'suspend_reason')) {
             $target->suspend_reason = $reason ?: null;
             $target->suspend_message = $reason ?: null;
         }
@@ -133,7 +136,48 @@ class ModerationActions
         $target->save();
 
         if (class_exists(\Flarum\Suspend\Event\Suspended::class)) {
-            $this->events->dispatch(new \Flarum\Suspend\Event\Suspended($target, $actor));
+            try {
+                $this->events->dispatch(new \Flarum\Suspend\Event\Suspended($target, $actor));
+            } catch (\Throwable $e) {
+                // Suspension must succeed even if mail/notification transport is broken.
+                resolve('log')->warning('[PRM Moderation] Suspended event failed: '.$e->getMessage());
+            }
+        }
+    }
+
+    public function markAsSpammer(User $actor, User $target): void
+    {
+        $this->assertCanModerate($actor, $target);
+
+        if ($this->spamConfig->hideDiscussionsOnMark()) {
+            Discussion::query()
+                ->where('user_id', $target->id)
+                ->whereNull('hidden_at')
+                ->each(function (Discussion $discussion) use ($actor) {
+                    $discussion->hide($actor);
+                    $discussion->save();
+                });
+        }
+
+        if ($this->spamConfig->hidePostsOnMark()) {
+            CommentPost::query()
+                ->where('user_id', $target->id)
+                ->whereNull('hidden_at')
+                ->each(function (CommentPost $post) use ($actor) {
+                    $post->hide($actor);
+                    $post->save();
+                });
+        }
+
+        if ($this->spamConfig->suspendOnMark()) {
+            $this->ban($actor, $target, 0, 'Marked as spammer');
+        }
+
+        $schema = $target->getConnection()->getSchemaBuilder();
+
+        if ($schema->hasColumn('users', 'bio') && ! empty($target->bio)) {
+            $target->bio = null;
+            $target->save();
         }
     }
 }
