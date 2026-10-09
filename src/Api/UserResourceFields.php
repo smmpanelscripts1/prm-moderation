@@ -40,6 +40,14 @@ class UserResourceFields
                         && (int) $actor->id !== (int) $user->id
                         && (! $user->isAdmin() || $actor->isAdmin());
                 }),
+            Schema\Boolean::make('canMarkSpammer')
+                ->get(function (User $user, Context $context) {
+                    $actor = $context->getActor();
+
+                    return $actor->hasPermission('moderation.access')
+                        && (int) $actor->id !== (int) $user->id
+                        && (! $user->isAdmin() || $actor->isAdmin());
+                }),
             Schema\Boolean::make('canReportUser')
                 ->get(function (User $user, Context $context) {
                     $actor = $context->getActor();

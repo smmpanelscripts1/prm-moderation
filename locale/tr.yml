@@ -4,13 +4,56 @@ prm-moderation:
       access_label: Moderasyon paneline eriş
       report_label: Kullanıcı / konu / mesaj raporla
       ticket_label: Destek talebi aç
+    settings:
+      enabled_label: İçerik spam filtresini aç
+      enabled_help: Yeni hesapların konu başlığı ve mesajlarını spam sinyallerine karşı tarar.
+      monitor_all_users_label: Tüm kullanıcıları tara
+      monitor_all_users_help: Yeni hesap penceresini yok say; personel yine muaf.
+      monitor_post_count_label: İlk N mesajı tara
+      monitor_post_count_help: Bu kadar veya daha az mesajı olan kullanıcılar incelenir.
+      monitor_hours_old_label: Şu saatten genç hesapları tara
+      monitor_hours_old_help: Bu kadar saat içinde açılmış hesaplar da incelenir.
+      detect_urls_label: İzin listesi dışı URL tespit et
+      detect_emails_label: E-posta adresi tespit et
+      detect_phones_label: Telefon numarası tespit et (+/00…)
+      detect_blocked_words_label: Engelli kelime tespit et
+      scan_usernames_label: Kullanıcı adlarını tara
+      scan_usernames_help: Spam gibi duran kayıt / kullanıcı adı değişikliğini engeller (aynı dedektörler + spam eşiği).
+      scan_nicknames_label: Takma adları tara
+      scan_nicknames_help: Nicknames eklentisi gerekir. Spam görünen görünen adları reddeder.
+      scan_bios_label: Kullanıcı biyografilerini tara
+      scan_bios_help: User Bio eklentisi gerekir. Spam görünen bio metinlerini reddeder.
+      allowed_domains_label: İzin verilen domainler
+      allowed_domains_help: Satır başına bir domain. Forum hostu her zaman izinlidir.
+      blocked_words_label: Engelli kelimeler
+      blocked_words_help: Satır başına bir kelime veya ifade.
+      flag_threshold_label: Flag / rapor eşiği
+      flag_threshold_help: Soft sinyal skoru; flag ve moderasyon raporu oluşturur (varsayılan 30).
+      spam_threshold_label: Onay bekleme eşiği
+      spam_threshold_help: Hard sinyal skoru; içeriği onaya düşürür (varsayılan 50).
+      auto_flag_label: Otomatik Flag oluştur
+      auto_flag_help: Flags eklentisi gerekir.
+      auto_unapprove_label: İçeriği otomatik onaya düşür
+      auto_unapprove_help: Approval eklentisi gerekir.
+      auto_report_label: Otomatik moderasyon raporu oluştur
+      auto_report_help: Moderasyon panelinde bekleyen spam raporu açar.
+      system_user_id_label: Sistem kullanıcı ID
+      system_user_id_help: Otomatik işlemlerde raporlayan / flag yazarı (genelde 1).
+      hide_posts_on_mark_label: "Spammer işaretle: mesajları gizle"
+      hide_discussions_on_mark_label: "Spammer işaretle: konuları gizle"
+      suspend_on_mark_label: "Spammer işaretle: kullanıcıyı askıya al"
   forum:
     header: Moderasyon
     header_tickets: Destek
     nav_warnings: Uyarılar
+    spam:
+      profile_blocked: Bu profil alanı spam gibi görünüyor ve engellendi.
     user_controls:
       warn: Uyarı gönder
       report: Raporla
+      mark_spammer: Spammer olarak işaretle
+      mark_spammer_confirm: Bu kullanıcının içeriği gizlensin ve spammer olarak askıya alınsın mı?
+
     post_controls:
       warn: Uyarı gönder
       report: Mesajı raporla

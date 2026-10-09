@@ -23,6 +23,7 @@ export default [
     .attribute('warningPoints')
     .attribute('warningCount')
     .attribute('canWarn')
+    .attribute('canMarkSpammer')
     .attribute('canReportUser'),
 
   new Extend.Routes()

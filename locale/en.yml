@@ -4,13 +4,56 @@ prm-moderation:
       access_label: Access the moderation panel
       report_label: Report users, posts, and discussions
       ticket_label: Open support tickets
+    settings:
+      enabled_label: Enable content spam filter
+      enabled_help: Scan new posts and discussion titles from fresh accounts for spam signals.
+      monitor_all_users_label: Monitor all users
+      monitor_all_users_help: Ignore the fresh-account window and scan everyone (staff still skipped).
+      monitor_post_count_label: Monitor first N posts
+      monitor_post_count_help: Users with this many posts or fewer are scrutinized.
+      monitor_hours_old_label: Monitor accounts younger than (hours)
+      monitor_hours_old_help: Also scrutinize accounts created within this many hours.
+      detect_urls_label: Detect non-allowlisted URLs
+      detect_emails_label: Detect email addresses
+      detect_phones_label: Detect phone numbers (+/00…)
+      detect_blocked_words_label: Detect blocked words
+      scan_usernames_label: Scan usernames
+      scan_usernames_help: Block registration / username changes that look like spam (same detectors + spam threshold).
+      scan_nicknames_label: Scan nicknames
+      scan_nicknames_help: Requires the Nicknames extension. Rejects spammy display names.
+      scan_bios_label: Scan user bios
+      scan_bios_help: Requires the User Bio extension. Rejects spammy profile bios.
+      allowed_domains_label: Allowed domains
+      allowed_domains_help: One domain per line. The forum host is always allowed.
+      blocked_words_label: Blocked words
+      blocked_words_help: One word or phrase per line.
+      flag_threshold_label: Flag / report threshold
+      flag_threshold_help: Soft signal score that creates a flag and moderation report (default 30).
+      spam_threshold_label: Unapprove threshold
+      spam_threshold_help: Hard signal score that holds content for approval (default 50).
+      auto_flag_label: Auto-create Flags
+      auto_flag_help: Requires the Flags extension.
+      auto_unapprove_label: Auto-unapprove content
+      auto_unapprove_help: Requires the Approval extension.
+      auto_report_label: Auto-create moderation reports
+      auto_report_help: Creates a pending spam report in the moderation panel.
+      system_user_id_label: System user ID
+      system_user_id_help: User ID used as reporter / flag author for automated actions (usually 1).
+      hide_posts_on_mark_label: "Mark as spammer: hide posts"
+      hide_discussions_on_mark_label: "Mark as spammer: hide discussions"
+      suspend_on_mark_label: "Mark as spammer: suspend user"
   forum:
     header: Moderation
     header_tickets: Support
     nav_warnings: Warnings
+    spam:
+      profile_blocked: This profile field looks like spam and was blocked.
     user_controls:
       warn: Warn user
       report: Report user
+      mark_spammer: Mark as spammer
+      mark_spammer_confirm: Hide this user's content and suspend them as a spammer?
+
     post_controls:
       warn: Warn author
       report: Report post
